@@ -2,8 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class Main{
@@ -20,14 +18,9 @@ public class Main{
         }
         Arrays.sort(array);
         for(int i = 0; i < array.length; i++){
-            for(int j = i + 1; j < array.length; j++){
-                if(array[i] + array[j] > x)
-                    break;
-                else if (array[i] + array[j] == x) {
-                    answer++;
-                }
-            }
+            if(Arrays.binarySearch(array, x - array[i]) >= 0)
+                answer++;
         }
-        System.out.println(answer);
+        System.out.println(answer/2);
     }
 }

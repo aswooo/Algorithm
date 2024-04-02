@@ -11,9 +11,7 @@ public class Main {
 
         String string = br.readLine() + " ";
         String token  = br.readLine();
-        StringTokenizer st = new StringTokenizer(string, token);
         answer = string.split(token).length - 1;
-
 
         System.out.println(answer);
     }
